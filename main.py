@@ -36,11 +36,12 @@ else:
 
 def game_reset():
     global user_name
+    score.reset(user_name)
 
     user_name = screen.textinput(title='WELCOME TO THE SNAKE GAME', prompt='Enter your name')
 
     if user_name:
-        score.reset(user_name)
+        # score.reset(user_name)
         snake.reset()
         screen.listen()
         return True
@@ -63,6 +64,8 @@ def display_scores():
         print("="*40)
     else:
         print("\nNo high scores recorded yet!")
+
+    db_con.close()
 
 
 while is_game_on:

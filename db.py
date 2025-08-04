@@ -27,7 +27,7 @@ class Database():
 
     
     def top_scores(self):
-        query = '''SELECT name, high_score FROM Users ORDER BY high_score DESC LIMIT 5'''
+        query = '''SELECT name, score FROM Users ORDER BY score DESC LIMIT 5'''
         self.cur.execute(query)
         results = self.cur.fetchall()
         return results
